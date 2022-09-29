@@ -1,0 +1,18 @@
+{block content}
+	<h1 n:block="title">Test Blog</h1>
+
+	{foreach $posts as $post}
+		<div class="post">
+			<h2><a href="{link Post:show $post->id}">{$post->title}</a></h2>
+
+			<div>
+				<p>{$post->content}</p>
+				<p>{$post->created_at}</p>
+			</div>
+		</div>
+	{/foreach}
+
+	<div>
+		<a n:href="Edit:create">New article</a>
+	</div>
+{/block}
